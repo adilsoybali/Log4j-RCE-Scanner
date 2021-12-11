@@ -48,8 +48,9 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Contact
 
-Adil Soybalı -  [@adilsoybali](https://twitter.com/adilsoybali)  -  [info@adilsoybali.com](mailto:info@adilsoybali.com)
+Adil Soybalı -  [@adilsoybali](https://twitter.com/adilsoybali)  -  [adil.soybali@seccops.com](mailto:adil.soybali@seccops.com)
 
 ## Acknowledgments
 
+-   [Seccops](https://seccops.com/)
 -   [LunaSec](https://www.lunasec.io/docs/blog/log4j-zero-day/)
