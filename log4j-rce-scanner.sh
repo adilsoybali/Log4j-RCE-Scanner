@@ -11,6 +11,7 @@
 #        01000001 01100100 01101001 01101100 01110011 01101111 01111001 01100010 01100001 01101100 01101001
 #        https://github.com/adilsoybali
 #        https://adilsoybali.com
+#        https://seccops.com
 
 showHelp() {
 cat << EOF  
