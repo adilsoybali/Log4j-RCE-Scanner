@@ -11,11 +11,15 @@ Using this tool, you can scan for remote command execution vulnerability CVE-202
 ## Features
 - It can scan according to the url list you provide.
 - It can scan all of them by finding the subdomains of the domain name you give.
+## Requirements
+1. [httpx](https://github.com/projectdiscovery/httpx)
+2. [curl](https://curl.se/download.html)
+> If you want to scan with a domain name, you must additionally install [subfinder](https://github.com/projectdiscovery/subfinder), [assetfinder](https://github.com/tomnomnom/assetfinder) and [amass](https://github.com/OWASP/Amass).
 ## Installation
  1. `git clone https://github.com/adilsoybali/Log4j-RCE-Scanner.git`
  2. `cd Log4j-RCE-Scanner`
  3. `chmod +x log4j-rce-scanner.sh`
-> If you want to scan with a domain name, you must additionally install [subfinder](https://github.com/projectdiscovery/subfinder), [assetfinder](https://github.com/tomnomnom/assetfinder) and [amass](https://github.com/OWASP/Amass).
+
 ## Usage
 
     ./log4j-rce-scanner.sh -h
