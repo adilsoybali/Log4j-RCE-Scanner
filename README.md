@@ -32,6 +32,8 @@ This will display help for the tool. Here are all the switches it supports.
     ./log4j-rce-scanner.sh -l httpxsubdomains.txt -b yrt45r4sjyoj19617jem5briio3cs.burpcollaborator.net
     ./log4j-rce-scanner.sh -d adilsoybali.com -b yrt45r4sjyoj19617jem5briio3cs.burpcollaborator.net
 
+[Click here to go to Interactsh.](https://app.interactsh.com/#/)
+
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are  **greatly appreciated**.
