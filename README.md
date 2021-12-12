@@ -6,7 +6,7 @@
 <p align="center">
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/releases/tag/v1.0"><img src="https://img.shields.io/badge/release-v1-brightgreen?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/stargazers"><img src="https://img.shields.io/github/stars/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
-<a href="https://img.shields.io/github/forks/adilsoybali/Log4j-RCE-Scanner?style=flat"><img src="https://img.shields.io/github/forks/adilsoybali/Log4j-RCE-Scanner?style=flat"></a>
+<a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/network/members"><img src="https://img.shields.io/github/forks/adilsoybali/Log4j-RCE-Scanner?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/issues"><img src="https://img.shields.io/github/issues/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/"><img src="https://img.shields.io/github/repo-size/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/blob/master/LICENSE"><img src="https://img.shields.io/github/license/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
