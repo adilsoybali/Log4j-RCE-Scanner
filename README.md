@@ -84,5 +84,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 -   [Seccops](https://seccops.com/)
 -   [LunaSec](https://www.lunasec.io/docs/blog/log4j-zero-day/)
 
-### Stargazers over time
-[![Stargazers over time](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner.svg)](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner)
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner.svg?)](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner)
+
