@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-<a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/releases/tag/v1.0"><img src="https://img.shields.io/badge/release-v1-brightgreen?style=flat"></a>
+<a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/releases/tag/v2"><img src="https://img.shields.io/badge/release-v2-brightgreen?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/stargazers"><img src="https://img.shields.io/github/stars/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/network/members"><img src="https://img.shields.io/github/forks/adilsoybali/Log4j-RCE-Scanner?style=flat"></a>
 <a href="https://github.com/adilsoybali/Log4j-RCE-Scanner/issues"><img src="https://img.shields.io/github/issues/adilsoybali/Log4j-RCE-Scanner.svg?style=flat"></a>
@@ -83,8 +83,8 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 -   [Seccops](https://seccops.com/)
 -   [LunaSec](https://www.lunasec.io/docs/blog/log4j-zero-day/)
+-   [Zsolt Háló](https://github.com/zsolt-halo)
 
 ## Stargazers over time
 
 [![Stargazers over time](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner.svg?)](https://starchart.cc/adilsoybali/Log4j-RCE-Scanner)
-
