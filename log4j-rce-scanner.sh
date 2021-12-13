@@ -12,7 +12,20 @@
 #        https://github.com/adilsoybali
 #        https://adilsoybali.com
 #        https://seccops.com
+defaultcolour=`tput sgr0`
+redcolour=`tput setaf 1`
+doescommandexist() {
+    command -v "$1" >/dev/null 2>&1
+    if [[ $? -ne 0 ]]; then
+        echo "${redcolour}Please install $1."
+    else
+        echo "${defaultcolour}$1              Installed, continuing"
 
+    fi
+}
+for COMMAND in "curl" "httpx" "assetfinder" "subfinder" "amass"; do
+    doescommandexist "${COMMAND}"
+done
 showHelp() {
 cat << EOF  
 $(tput setaf 2)
