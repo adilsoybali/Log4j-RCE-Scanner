@@ -28,6 +28,7 @@ Using this tool, you can scan for remote command execution vulnerability CVE-202
 ## Features
 - It can scan according to the url list you provide.
 - It can scan all of them by finding the subdomains of the domain name you give.
+- It adds the source domain as a prefix to determine from which source the incoming dns queries are coming from.
 ## Requirements
 1. [httpx](https://github.com/projectdiscovery/httpx)
 2. [curl](https://curl.se/download.html)
