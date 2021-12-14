@@ -12,20 +12,48 @@
 #        https://github.com/adilsoybali
 #        https://adilsoybali.com
 #        https://seccops.com
-defaultcolour=`tput sgr0`
-redcolour=`tput setaf 1`
-doescommandexist() {
+
+doesCommandExist() {
     command -v "$1" >/dev/null 2>&1
     if [[ $? -ne 0 ]]; then
-        echo "${redcolour}Please install $1."
-    else
-        echo "${defaultcolour}$1              Installed, continuing"
-
+      echo -e "$(tput setaf 3)$1 $(tput sgr0)"
     fi
 }
-for COMMAND in "curl" "httpx" "assetfinder" "subfinder" "amass"; do
-    doescommandexist "${COMMAND}"
-done
+
+domainScan-DoesCommandExistReqText() {
+    if [[ $(command -v "curl" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "httpx" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "assetfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "subfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "amass" >/dev/null 2>&1 ; echo $?) -ne 0 ]]; then
+      echo -e "\n$(tput setaf 3 ; tput rev ; tput bold) ! Warning ! $(tput sgr0)"      
+      echo -e "$(tput setaf 3)Using this feature requires special requirements. It has been detected that the requirements are not installed on your system. $(tput sgr0)"
+      echo -e "\n$(tput setaf 3 ; tput bold)Please install these tools: $(tput sgr0)"
+    fi
+}
+
+domainScan-DoesCommandExistReqExit() {
+    if [[ $(command -v "curl" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "httpx" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "assetfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "subfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "amass" >/dev/null 2>&1 ; echo $?) -ne 0 ]]; then
+      exit
+    fi
+}
+
+listScan-DoesCommandExistReqText() {
+    if [[ $(command -v "curl" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "httpx" >/dev/null 2>&1 ; echo $?) -ne 0 ]]; then
+      echo -e "\n$(tput setaf 3 ; tput rev ; tput bold) ! Warning ! $(tput sgr0)"      
+      echo -e "$(tput setaf 3)Using this feature requires special requirements. It has been detected that the requirements are not installed on your system. $(tput sgr0)"
+      echo -e "\n$(tput setaf 3 ; tput bold)Please install these tools: $(tput sgr0)"
+    fi
+}
+
+listScan-DoesCommandExistReqExit() {
+    if [[ $(command -v "curl" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "httpx" >/dev/null 2>&1 ; echo $?) -ne 0 ]]; then
+      exit
+    fi
+}
+
+doesCommandExistReqMoreInfo() {
+    if [[ $(command -v "curl" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "httpx" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "assetfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "subfinder" >/dev/null 2>&1 ; echo $?) -ne 0 || $(command -v "amass" >/dev/null 2>&1 ; echo $?) -ne 0 ]]; then
+      echo -e "$(tput setaf 4 ; tput bold)\n$(tput setaf 4 ; tput bold)More Info: $(tput smul)https://github.com/adilsoybali/Log4j-RCE-Scanner#requirements$(tput rmul) $(tput sgr0)\n"
+    fi
+}
+
 showHelp() {
 cat << EOF  
 $(tput setaf 2)
@@ -45,6 +73,12 @@ EOF
 }
 
 domainScan() {
+    domainScan-DoesCommandExistReqText
+    for COMMAND in "curl" "httpx" "assetfinder" "subfinder" "amass"; do
+      doesCommandExist "${COMMAND}"
+    done
+    doesCommandExistReqMoreInfo
+    domainScan-DoesCommandExistReqExit
     echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Subfinder is working $(tput sgr0)\n" ; subfinder -silent -d sub.$domain >> sub.$domain ; echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Assetfinder is working $(tput sgr0)\n" ; assetfinder -subs-only $domain >> sub.$domain ; echo -e "\n$(tput setaf 2 ; tput rev ; tput bold) Amass is working $(tput sgr0)\n" ; amass enum -norecursive --silent -noalts -d $domain >> sub.$domain ; cat sub.$domain | sort -u | httpx -silent | while read url; do 
     url_without_protocol=$(echo $url | sed 's|https://||g' | sed 's|http://||g')
     url_without_protocol_and_port=$(echo $url_without_protocol | sed 's|:.*||g')
@@ -55,6 +89,12 @@ domainScan() {
 }
 
 listScan() {
+    listScan-DoesCommandExistReqText
+    for COMMAND in "curl" "httpx"; do
+      doesCommandExist "${COMMAND}"
+    done
+    doesCommandExistReqMoreInfo
+    listScan-DoesCommandExistReqExit
     cat $list | sort -u | httpx -silent | while read url; do 
     url_without_protocol=$(echo $url | sed 's|https://||g' | sed 's|http://||g')
     url_without_protocol_and_port=$(echo $url_without_protocol | sed 's|:.*||g')
