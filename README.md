@@ -56,7 +56,11 @@ This will display help for the tool. Here are all the switches it supports.
     ./log4j-rce-scanner.sh -l httpxsubdomains.txt -b yrt45r4sjyoj19617jem5briio3cs.burpcollaborator.net
     ./log4j-rce-scanner.sh -d adilsoybali.com -b yrt45r4sjyoj19617jem5briio3cs.burpcollaborator.net
 
+[Click here to go to Burp collaborator documentation page.](https://portswigger.net/burp/documentation/collaborator)
+
 [Click here to go to Interactsh.](https://app.interactsh.com/#/)
+
+> If the domain is vulnerable, dns callbacks with the vulnerable domain name is sent to the burp collaborator or interactsh address you provided.
 
 ## Contributing
 
