@@ -77,7 +77,7 @@ If you have a suggestion that would make this better, please fork the repo and c
 ## Contact
 
 <p>
-<a href="mailto:adil.soybali@seccops.com" target="_blank"><img align="center" src="https://img.shields.io/static/v1?style=for-the-badge&message=Email&color=EA4335&logo=Gmail&logoColor=FFFFFF&label=" alt="Email" /></a>
+<a href="mailto:info@adilsoybali.com" target="_blank"><img align="center" src="https://img.shields.io/static/v1?style=for-the-badge&message=Email&color=EA4335&logo=Gmail&logoColor=FFFFFF&label=" alt="Email" /></a>
 <a href="https://linkedin.com/in/adilsoybali" target="_blank"><img align="center" src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin" /></a>
 <a href="https://discord.com/channels/@AdilSoybali#0044" target="_blank"><img align="center" src="https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
 <a href="https://twitter.com/adilsoybali" target="_blank"><img align="center" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter" /></a>
