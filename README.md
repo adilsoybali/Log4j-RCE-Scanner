@@ -86,7 +86,6 @@ If you have a suggestion that would make this better, please fork the repo and c
 
 ## Acknowledgments
 
--   [Seccops](https://seccops.com/)
 -   [LunaSec](https://www.lunasec.io/docs/blog/log4j-zero-day/)
 -   [Zsolt Háló](https://github.com/zsolt-halo)
 
